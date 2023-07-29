@@ -1,11 +1,11 @@
 import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
+import apiKey from "./config.json" assert {type: "json"};
 
 const app = express();
 const port = 3000;
-const apiKey = "40a40239479547f0bf2154453232907";
-const baseUrl = "http://api.weatherapi.com/v1/current.json?key="+apiKey+"&q=";
+const baseUrl = "http://api.weatherapi.com/v1/current.json?key="+apiKey.apiKey+"&q=";
 
 let locArr = [];
 
