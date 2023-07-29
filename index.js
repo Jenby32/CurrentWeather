@@ -19,8 +19,13 @@ app.post("/", async (req, res) => {
   console.log("clicked")
   const content = req.body.location
   const gridItemClass = "grid-item";
-  const div = "<div class="+gridItemClass+">"+content+"</div>"
-  locArr.push(div)
+  const gridItem = `<div class=${gridItemClass}>
+                        <div class="grid-item1">${content}</div>
+                        <div class="grid-item2"></div>
+                        <div class="grid-item3"></div>
+                        <div class="grid-item4"></div>
+                    </div>`;
+  locArr.push(gridItem)
   console.log(locArr);
   res.render("index.ejs", {data: locArr})
 });
